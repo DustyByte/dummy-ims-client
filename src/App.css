@@ -1,38 +1,296 @@
+:root{
+  --card-image-width : 200px
+}
+
 .App {
   text-align: center;
+  display: flex;
+  background-color: #121212;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navBar{
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+  height: 100svh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.sect:nth-child(1){
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sect{
+  color: white;
+  padding: 30px 100px 30px 100px;
+  border-top: solid 1px #323232;
+}
+
+.sect.selected{
+  background-color: #323232;
+}
+
+.sect:hover{
+  background-color: #323232;
+}
+
+.body-product{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-cart{
+  flex-grow: 1;
+}
+
+.header{
+  color: white;
+  padding: 30px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.searchAndFilter{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+.searchAndFilter > input{
+  height: 38px;
+  width: 25%;
+  background-color: #121212;
+  border: 1px solid #252525;
+  padding: 5px 10px 5px 10px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mappedProducts{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+.card{
+  color: white;
+  border-radius: 8px;
+  background-color: #252525;
+  border: 1px solid #323232;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 30px;
+  padding: 20px;
+  
+  img{
+    border-radius: 12px;
+    width: var(--card-image-width);
+    height: calc(4/3* var(--card-image-width));
+    border: 1px solid #323232;
+    object-fit: cover;
+  }
+
+  button{
+    background-color: black;
+    border: 1px solid #323232;
+    outline: none;
+    color: white;
+    border-radius: 8px;
+    padding: 5px;
+  }
+
+  div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    input{
+      padding: 5px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      background-color: #323232;
+      color: white;
+      width: 100px;
+    }
+  }
+
+  h4, h5{
+    padding: 0;
+    margin: 0;
+  }
+
+  button:hover{
+    background-color: #121212;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cart{
+  margin: 50px;
+  margin-bottom: 0;
+  padding: 50px;
+  border-radius: 22px;
+  background-color: #272727;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr 2fr;
+  row-gap: 30px;
+}
+
+.imgDiv, .qntDiv, .btnDiv, .priceDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart > .imgDiv > img{
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.cart > .btnDiv > img{
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  position: relative;
+  padding: 10px;
+  transition: all 200ms ease-in-out;
+}
+
+.cart > .btnDiv > img:hover{
+  border-radius: 50%;
+  background-color: #323232;
+}
+
+.cartParams{
+  padding: 30px 50px 30px 50px;
+  display: flex;
+  justify-content: center;
+  gap: 174px;
+  align-items: center;
+  color: white;
+}
+
+
+.cartParams > div{
+  width: 128px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #272727;
+}
+
+.cartParams > div > h5, i{
+  margin: 0;
+  padding: 0;
+}
+
+.cartParams > div > button{
+  border: 2px solid #323232;
+  outline: none;
+  padding: 5px 8px 5px 8px;
+  background-color: transparent;
+  border-radius: 6px;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.cartParams > div > button:hover{
+  background-color: #323232;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.redeemContainer{
+  margin-left: 50px;
+  padding: 16px;
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: calc(256px + 32px + 16px + 48px);
+  border-radius: 8px;
+}
+
+.redeem{
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.redeem > input{
+  width: 256px;
+  color: white;
+  padding: 5px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #323232;
+  background-color: transparent;
+}
+
+.redeem > button{
+  background-color: #272727;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+}
+
+.redeem > button:hover{
+  background-color: #323232;
+}
+
+.result{
+  margin: 30px 448px 30px 448px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 12px;
+}
+
+.result > p{
+  margin: 0;
+  padding: 0;
+  color: #d2cece;
+}
+
+.result > img{
+  padding: 5px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+}
+
+.success > img:hover{
+  background-color: #2b9c4d;
+}
+
+.fail > img:hover{
+  background-color: #9c2b2e;
+}
+
+.success{
+  background-color: #2b9c4da6;
+  border: 1px solid #4ee84e;
+}
+
+.fail{
+  background-color: #9c2b2ea6;
+  border: 1px solid #e84e4f;
 }

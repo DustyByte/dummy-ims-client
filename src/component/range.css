@@ -1,0 +1,37 @@
+.range{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: white;
+}
+
+.range > div{
+    z-index: 1;
+    border-radius: 8px;
+    background-color: #272727;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 10px 20px;
+    position: relative;
+}
+
+.range > div > span{
+    user-select: none;
+    transition: all 0.2s ease-in;
+    position: absolute;
+    z-index: -1;
+}
+
+.range > div > span:hover{
+    background-color: #272727;
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+}
+
+img{
+    width: 15px;
+    height: 15px;
+    user-select: none;
+    cursor: pointer;
+}
