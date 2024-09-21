@@ -50,8 +50,9 @@ export default function App() {
     // Filtering for search text
     let updatedFilteredProducts = products.filter(product => {
       if(product.productName.includes(searchedString)){
-        return product
+        return true
       }
+      return false
     })
 
     // Filtering for price range
@@ -63,8 +64,9 @@ export default function App() {
     const range = parseRange(priceRangeSelected)
     updatedFilteredProducts = updatedFilteredProducts.filter(product => {
       if(product.productPrice > range.begin && product.productPrice <= range.end){
-        return product
+        return true
       }
+      return false
     })
     setFilteredProducts(updatedFilteredProducts)
 
